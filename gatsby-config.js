@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Design+Code`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    description: `Don’t skip design. Learn design and code, by building real apps, collaborate and solving product UI problems.`,
+    author: `@pronoia9`,
   },
   plugins: [
     `gatsby-plugin-image`,
