@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { H1, MediumText } from '../styles/TextStyles';
 import { themes } from '../styles/ColorStyles';
 import { heroSection as data } from '../../utils/data';
+import PurchaseButton from '../buttons/PurchaseButton';
 
 const HeroSection = () => {
   return (
@@ -16,6 +17,7 @@ const HeroSection = () => {
             and code React apps
           </Title>
           <Description>{data.description}</Description>
+          <PurchaseButton {...data.button} />
         </TextWrapper>
       </ContentWrapper>
     </Wrapper>
