@@ -2,15 +2,15 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-import { heroSection } from '../../utils/data';
+import { heroSection as data } from '../../utils/data';
 
 const HeroSection = () => {
   return (
     <Wrapper>
       <ContentWrapper>
         <TextWrapper>
-          <h1>{heroSection.title}</h1>
-          <p>{heroSection.subtitle}</p>
+          <h1>{data.title}</h1>
+          <p>{data.description}</p>
         </TextWrapper>
         <Link to='/page-2/'>Go to page 2</Link> <br />
       </ContentWrapper>
