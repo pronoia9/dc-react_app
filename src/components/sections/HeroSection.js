@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 import { heroSection as data } from '../../utils/data';
@@ -9,10 +8,13 @@ const HeroSection = () => {
     <Wrapper>
       <ContentWrapper>
         <TextWrapper>
-          <Title>{data.title}</Title>
+          <Title>
+            Design
+            <br />
+            and code React apps
+          </Title>
           <Description>{data.description}</Description>
         </TextWrapper>
-        <Link to='/page-2/'>Go to page 2</Link> <br />
       </ContentWrapper>
     </Wrapper>
   );
