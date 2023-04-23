@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { H1, MediumText } from '../styles/TextStyles';
+import { themes } from '../styles/ColorStyles';
 import { heroSection as data } from '../../utils/data';
 
 const HeroSection = () => {
@@ -41,7 +42,7 @@ const TextWrapper = styled.div`
 `;
 
 const Title = styled(H1)`
-  color: white;
+  color: ${themes.light.text1};
 `;
 
 const Description = styled(MediumText)``;
