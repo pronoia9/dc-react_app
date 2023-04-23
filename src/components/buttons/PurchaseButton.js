@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export default function PurchaseButton({ text }) {
+export default function PurchaseButton({ title, subtitle }) {
   return (
     <Wrapper>
-      <Title>{text[0]}</Title>
-      <Subtitle>{text[1]}</Subtitle>
+      <Title>{title}</Title>
+      <Subtitle>{subtitle}</Subtitle>
     </Wrapper>
   );
 }
