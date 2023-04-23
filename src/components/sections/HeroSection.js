@@ -2,16 +2,16 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
+import { heroSection } from '../../utils/data';
+
 const HeroSection = () => {
   return (
     <Wrapper>
       <ContentWrapper>
-        <img src='/images/logos/logo.svg' alt='logo' />
-        <h1>Design and code React apps</h1>
-        <p>
-          Don’t skip design. Learn design and code, by building real apps with React and Swift. Complete
-          courses about the best tools.
-        </p>
+        <TextWrapper>
+          <h1>{heroSection.title}</h1>
+          <p>{heroSection.subtitle}</p>
+        </TextWrapper>
         <Link to='/page-2/'>Go to page 2</Link> <br />
       </ContentWrapper>
     </Wrapper>
@@ -29,4 +29,8 @@ const ContentWrapper = styled.div`
   max-width: 1234px;
   margin: 0 auto;
   padding: 200px 30px;
+`;
+
+const TextWrapper = styled.div`
+  max-width: 360px;
 `;
