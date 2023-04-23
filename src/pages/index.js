@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'gatsby';
 
 import { Layout, Seo } from '../components/layout';
 import { HeroSection } from '../components/sections';
