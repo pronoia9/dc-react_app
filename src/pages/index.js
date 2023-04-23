@@ -1,14 +1,13 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import Layout from '../components/layout/layout';
-import SEO from '../components/layout/seo';
 
+import { Layout, Seo } from '../components/layout';
 import { HeroSection } from '../components/sections';
 
 function IndexPage() {
   return (
     <Layout>
-      <SEO title='Home' />
+      <Seo title='Home' />
       <HeroSection />
       <img src='/images/logos/logo.svg' alt='logo' />
       <h1>Design and code React apps</h1>
