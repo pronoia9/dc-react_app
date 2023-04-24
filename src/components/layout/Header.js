@@ -15,18 +15,14 @@ export default function Header() {
         <img src={data.logo} alt='logo' />
       </Link>
       <MenuWrapper count={data?.navLinks?.length}>
-        {data?.navLinks?.map((link, index) =>
-          link.title === 'account' ? (
-            <button>Account</button>
-          ) : (
-            <MenuButton
-              key={`${index}-${link.title}`}
-              {...link}
-              index={index}
-              onClick={() => setIsOpen(!isOpen)}
-            />
-          )
-        )}
+        {data?.navLinks?.map((link, index) => (
+          <MenuButton
+            key={`${index}-${link.title}`}
+            {...link}
+            index={index}
+            handleClick={() => link.icon.includes('account') && setIsOpen(!isOpen)}
+          />
+        ))}
       </MenuWrapper>
       <MenuTooltip data={data.tooltips.account} isOpen={isOpen} />
     </Wrapper>

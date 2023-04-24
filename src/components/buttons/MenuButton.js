@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
-export default function MenuButton({ title, icon, link, index }) {
+export default function MenuButton({ title, icon, link, index, handleClick }) {
   return (
     <>
       <Link to={link}>
-        <MenuItem title={title?.length}>
+        <MenuItem title={title?.length} onClick={handleClick}>
           <img src={icon} alt={title} />
           {title}
         </MenuItem>
