@@ -10,8 +10,6 @@ const defaultTooltipState = { more: false, search: false, account: false };
 export default function HeaderSection() {
   const [isOpen, setIsOpen] = useState(defaultTooltipState);
 
-  useEffect(() => {}, []);
-
   const handleClick = (e, tooltip, title) => {
     if (tooltip) {
       e.preventDefault();
@@ -20,6 +18,13 @@ export default function HeaderSection() {
   };
 
   const handleClickOutside = () => {};
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <Wrapper>
