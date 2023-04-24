@@ -7,6 +7,13 @@ export const heroSection = {
     title: 'Get Pro Access',
     subtitle: '$19 per month',
   },
+  mockups: [
+    '/images/animations/mockup1.svg',
+    '/images/animations/mockup2.svg',
+    '/images/animations/mockup3.svg',
+    '/images/animations/mockup4.svg',
+    '/images/animations/mockup5.svg',
+  ],
   subtitle:
     'Get access to 30 premium courses, tutorials and livestreams. Over 80 hours of content, source files and priority support.',
 };
