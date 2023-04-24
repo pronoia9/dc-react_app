@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
-export default function MenuButton({ item }) {
+export default function MenuButton({ title, icon, link, tooltip, handleClick }) {
   return (
     // <Link to={item.link} onClick={props.onClick}>
-    <MenuItem title={item.title}>
-      <img src={item.icon} alt={item.title} />
-      {item.title}
+    <MenuItem title={!tooltip ? title : ''} onClick={handleClick}>
+      <img src={icon} alt={title} />
+      {!tooltip && title}
     </MenuItem>
     // </Link>
   );
