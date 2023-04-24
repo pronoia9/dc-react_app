@@ -9,6 +9,8 @@ const defaultTooltipState = { more: false, search: false, account: false };
 
 export default function HeaderSection() {
   const [isOpen, setIsOpen] = useState(defaultTooltipState);
+  const ref = useRef(),
+    tooltipsRef = { more: useRef(), search: useRef(), account: useRef() };
 
   const handleClick = (e, tooltip, title) => {
     if (tooltip) {
@@ -17,7 +19,14 @@ export default function HeaderSection() {
     }
   };
 
-  const handleClickOutside = () => {};
+  const handleClickOutside = (e) => {
+    if (
+      ref.current &&
+      !ref.current.contains(e.target) &&
+      !Object.values(tooltipsRef).find((r) => r.current.contains(e.target))
+    )
+      setIsOpen(defaultTooltipState);
+  };
 
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside);
@@ -29,18 +38,25 @@ export default function HeaderSection() {
   return (
     <Wrapper>
       <img src={data.logo} alt='logo' />
-      <MenuWrapper count={data.navLinks.length}>
-        {data.navLinks.map((item, index) => (
-          <div key={`nav-${index}`}>
-            <MenuButton {...item} handleClick={(e) => handleClick(e, item.tooltip, item.title)} />
-            {item.tooltip && <MenuTooltip isOpen={isOpen[item.title]} data={data.tooltips[item.title]} />}
-            {/* item.link === '/account' ? (
+      <MenuWrapper count={data.navLinks.length} ref={ref}>
+        {data.navLinks.map((item, index) => {
+          const { title, tooltip } = item;
+          return (
+            <div key={`nav-${index}`}>
+              <MenuButton {...item} handleClick={(e) => handleClick(e, tooltip, title)} />
+              {tooltip && (
+                <div ref={tooltipsRef[title]}>
+                  <MenuTooltip isOpen={isOpen[title]} data={data.tooltips[title]} />
+                </div>
+              )}
+              {/* item.link === '/account' ? (
             <MenuButton item={item} key={index} onClick={(e) => handleClick(e)} />
           ) : (
             <MenuButton item={item} key={index} />
           ) */}
-          </div>
-        ))}
+            </div>
+          );
+        })}
         <HamburgerWrapper>
           <MenuButton item={data.hamburger} onClick={(e) => handleClick(e)} />
         </HamburgerWrapper>
