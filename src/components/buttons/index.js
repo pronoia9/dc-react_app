@@ -1,3 +1,4 @@
+import MenuButton from './MenuButton';
 import PurchaseButton from './PurchaseButton';
 
-export { PurchaseButton };
+export { MenuButton, PurchaseButton };
