@@ -16,7 +16,8 @@ export default function HeroSection() {
           <Title>
             Design
             <br /> and code
-            <br /> <span>React</span> apps
+            <br />
+            <span>React</span> apps
           </Title>
           <Description>{data.description}</Description>
           <PurchaseButton {...data.button.title} />
