@@ -10,7 +10,7 @@ export default function Header() {
       <img src={headerSection.logo} />
       <MenuWrapper count={headerSection?.navLinks?.length}>
         {headerSection?.navLinks?.map((link, index) => (
-          <MenuButton key={link.title} data={link} index={index} />
+          <MenuButton key={`${index}-link.title`} {...link} index={index} />
         ))}
       </MenuWrapper>
     </Wrapper>
