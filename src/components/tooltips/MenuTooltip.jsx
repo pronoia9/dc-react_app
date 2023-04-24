@@ -1,4 +1,3 @@
-const MenuTooltip = () => {
+export default function MenuTooltip() {
   return <div>MenuTooltip</div>;
-};
-export default MenuTooltip;
+}

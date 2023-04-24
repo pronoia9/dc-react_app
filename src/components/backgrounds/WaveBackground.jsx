@@ -1,4 +1,3 @@
-const WaveBackground = () => {
+export default function WaveBackground() {
   return <div>WaveBackground</div>;
-};
-export default WaveBackground;
+}

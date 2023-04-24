@@ -1,4 +1,3 @@
-const MenuButton = () => {
+export default function MenuButton() {
   return <div>MenuButton</div>;
-};
-export default MenuButton;
+}

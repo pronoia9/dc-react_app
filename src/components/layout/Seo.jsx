@@ -1,4 +1,3 @@
-const Seo = () => {
+export default function Seo() {
   return <div>Seo</div>;
-};
-export default Seo;
+}

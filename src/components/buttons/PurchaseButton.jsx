@@ -1,4 +1,3 @@
-const PurchaseButton = () => {
+export default function PurchaseButton() {
   return <div>PurchaseButton</div>;
-};
-export default PurchaseButton;
+}
