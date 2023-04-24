@@ -8,10 +8,10 @@ export default function Header() {
   return (
     <Wrapper>
       <img src={headerSection.logo} />
-      <MenuWrapper>
+      <MenuWrapper count={headerSection?.navLinks?.length}>
         {headerSection.navLinks.map(({ title, icon, link }, index) => (
           <Link to={link} key={index}>
-            <MenuItem>
+            <MenuItem title={title?.length}>
               <img src={icon} alt={title} />
               {title}
             </MenuItem>
@@ -35,7 +35,7 @@ const Wrapper = styled.div`
 
 const MenuWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(7, auto);
+  grid-template-columns: repeat(${(props) => props.count}, auto);
   gap: 30px;
 `;
 
@@ -43,7 +43,7 @@ const MenuItem = styled.div`
   color: rgba(255, 255, 255, 0.7);
   display: grid;
   grid-template-columns: 24px auto;
-  gap: 10px;
+  gap: ${(props) => (props.title ? '10px' : '0px')};
   align-items: center;
   padding: 10px;
   border-radius: 10px;
