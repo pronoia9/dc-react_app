@@ -1,11 +1,12 @@
-import { Layout, Seo } from './components/layout';
-import { HeroSection } from './components/sections';
+import { HeaderSection, HeroSection } from './components/sections';
+import { GlobalStyle } from './components/styles/GlobalStyles';
 
 export default function App() {
   return (
-    <Layout>
-      <Seo title='Home' />
+    <>
+      <GlobalStyle />
+      <HeaderSection />
       <HeroSection />
-    </Layout>
+    </>
   );
 }
