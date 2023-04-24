@@ -1,21 +1,23 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 import { MenuButton } from '../buttons';
-import { headerSection } from '../../utils/data';
-import { Link } from 'gatsby';
+import { MenuTooltip } from '../tooltips';
+import { headerSection as data } from '../../utils/data';
 
 export default function Header() {
   return (
     <Wrapper>
       <Link to='/'>
-        <img src={headerSection.logo} alt='logo' />
+        <img src={data.logo} alt='logo' />
       </Link>
-      <MenuWrapper count={headerSection?.navLinks?.length}>
-        {headerSection?.navLinks?.map((link, index) => (
-          <MenuButton key={`${index}-link.title`} {...link} index={index} />
+      <MenuWrapper count={data?.navLinks?.length}>
+        {data?.navLinks?.map((link, index) => (
+          <MenuButton key={`${index}-${link.title}`} {...link} index={index} />
         ))}
       </MenuWrapper>
+      <MenuTooltip data={data?.tooltip} />
     </Wrapper>
   );
 }
