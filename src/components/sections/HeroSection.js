@@ -16,7 +16,9 @@ const HeroSection = () => {
           <Title>
             Design
             <br />
-            and code <span>React</span> apps
+            and code
+            <br />
+            <span>React</span> apps
           </Title>
           <Description>{data.description}</Description>
           <PurchaseButton {...data.button} />
@@ -81,6 +83,10 @@ const Title = styled(H1)`
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+
+  @media (max-width: 450px) {
+    font-size: 48px;
   }
 `;
 
