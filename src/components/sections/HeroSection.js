@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 import { MockupAnimation } from '../animations/';
 import { WaveBackground } from '../backgrounds';
@@ -29,9 +29,13 @@ const HeroSection = () => {
 
 export default HeroSection;
 
+const animation = keyframes`
+  from { opacity: 0; }
+  to { opacity: 1; }
+`;
+
 // STYLED COMPONENTS
 const Wrapper = styled.div`
-  background: linear-gradient(180deg, #4316db 0%, #9076e7 100%);
   overflow: hidden;
 `;
 
@@ -51,6 +55,7 @@ const TextWrapper = styled.div`
 
 const Title = styled(H1)`
   color: white;
+  animation: ${animation};
 `;
 
 const Description = styled(MediumText)``;
