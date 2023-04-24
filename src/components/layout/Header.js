@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
@@ -7,17 +7,28 @@ import { MenuTooltip } from '../tooltips';
 import { headerSection as data } from '../../utils/data';
 
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <Wrapper>
       <Link to='/'>
         <img src={data.logo} alt='logo' />
       </Link>
       <MenuWrapper count={data?.navLinks?.length}>
-        {data?.navLinks?.map((link, index) => (
-          <MenuButton key={`${index}-${link.title}`} {...link} index={index} />
-        ))}
+        {data?.navLinks?.map((link, index) =>
+          link.title === 'account' ? (
+            <button>Account</button>
+          ) : (
+            <MenuButton
+              key={`${index}-${link.title}`}
+              {...link}
+              index={index}
+              onClick={() => setIsOpen(!isOpen)}
+            />
+          )
+        )}
       </MenuWrapper>
-      <MenuTooltip data={data?.tooltip} />
+      <MenuTooltip data={data.tooltips.account} isOpen={isOpen} />
     </Wrapper>
   );
 }

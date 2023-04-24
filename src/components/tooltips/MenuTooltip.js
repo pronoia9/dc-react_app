@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { MenuButton } from '../buttons';
 
-export default function MenuTooltip({ data }) {
-  const [isOpen, setIsOpen] = useState(false);
-
+export default function MenuTooltip({ data, isOpen }) {
   return (
-    <Wrapper isOpen={isOpen} onClick={() => setIsOpen(!isOpen)}>
+    <Wrapper isOpen={isOpen}>
       {data.map((item, index) => (
         <MenuButton key={`${index}-${item.title}`} {...item} index={index} />
       ))}
