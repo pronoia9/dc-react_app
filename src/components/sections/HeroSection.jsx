@@ -5,9 +5,25 @@ import { WaveBackground } from '../backgrounds';
 import { PurchaseButton } from '../buttons';
 import { themes } from '../styles/ColorStyles';
 import { H1, MediumText } from '../styles/TextStyles';
+import { heroData as data } from '../../utils/data';
 
 export default function HeroSection() {
-  return <div>HeroSection</div>;
+  return (
+    <Wrapper>
+      <WaveBackground />
+      <ContentWrapper>
+        <TextWrapper>
+          <Title>
+            Design
+            <br /> and code <span>React</span> apps
+          </Title>
+          <Description>{data.description}</Description>
+          <PurchaseButton {...data.button.title} />
+        </TextWrapper>
+        <MockupAnimations />
+      </ContentWrapper>
+    </Wrapper>
+  );
 }
 
 const animation = keyframes`
