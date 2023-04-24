@@ -4,12 +4,13 @@ import styled from 'styled-components';
 
 import { Caption2, SmallText } from '../styles/TextStyles';
 
-export default function PurchaseButton({ icon, title, subtitle }) {
+export default function PurchaseButton({ icon, ring, title, subtitle }) {
   return (
     <Link to='/page-2'>
       <Wrapper>
         <IconWrapper>
           <Icon src={icon} />
+          <Ring src={ring} />
         </IconWrapper>
         <TextWrapper>
           <Title>{title}</Title>
@@ -43,11 +44,19 @@ const IconWrapper = styled.div`
   display: grid;
   align-content: center;
   justify-content: center;
+  justify-self: center;
+  position: relative;
 `;
 
 const Icon = styled.img`
   width: 29px;
   height: 29px;
+`;
+
+const Ring = styled.img`
+  position: absolute;
+  top: -15px;
+  left: -16px;
 `;
 
 const TextWrapper = styled.div`
