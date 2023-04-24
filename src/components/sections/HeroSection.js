@@ -2,14 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { MockupAnimation } from '../animations/';
+import { WaveBackground } from '../backgrounds';
 import { PurchaseButton } from '../buttons';
-import { themes } from '../styles/ColorStyles';
 import { H1, MediumText } from '../styles/TextStyles';
 import { heroSection as data } from '../../utils/data';
 
 const HeroSection = () => {
   return (
     <Wrapper>
+      <WaveBackground />
       <ContentWrapper>
         <TextWrapper>
           <Title>
