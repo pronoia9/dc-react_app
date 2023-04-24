@@ -3,11 +3,14 @@ import styled from 'styled-components';
 
 import { MenuButton } from '../buttons';
 import { headerSection } from '../../utils/data';
+import { Link } from 'gatsby';
 
 export default function Header() {
   return (
     <Wrapper>
-      <img src={headerSection.logo} />
+      <Link to='/'>
+        <img src={headerSection.logo} alt='logo' />
+      </Link>
       <MenuWrapper count={headerSection?.navLinks?.length}>
         {headerSection?.navLinks?.map((link, index) => (
           <MenuButton key={`${index}-link.title`} {...link} index={index} />
