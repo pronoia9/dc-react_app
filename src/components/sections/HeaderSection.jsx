@@ -10,9 +10,8 @@ export default function HeaderSection() {
 
   useEffect(() => {}, []);
 
-  const handleClick = (e, title) => {
-    if (title === 'more' || title === 'search' || title === 'account') {
-      console.log(title);
+  const handleClick = (e, tooltip, title) => {
+    if (tooltip) {
       e.preventDefault();
       setIsOpen((isOpen) => ({ ...isOpen, [title]: !isOpen[title] }));
     }
@@ -26,7 +25,7 @@ export default function HeaderSection() {
       <MenuWrapper count={data.navLinks.length}>
         {data.navLinks.map((item, index) => (
           <div key={`nav-${index}`}>
-            <MenuButton {...item} handleClick={(e) => handleClick(e, item.title)} />
+            <MenuButton {...item} handleClick={(e) => handleClick(e, item.tooltip, item.title)} />
             {item.tooltip && <MenuTooltip isOpen={isOpen[item.title]} data={data.tooltips[item.title]} />}
             {/* item.link === '/account' ? (
             <MenuButton item={item} key={index} onClick={(e) => handleClick(e)} />
