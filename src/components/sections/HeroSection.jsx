@@ -20,7 +20,7 @@ export default function HeroSection() {
             <span>React</span> apps
           </Title>
           <Description>{data.description}</Description>
-          <PurchaseButton {...data.button.title} />
+          <PurchaseButton {...data.button} />
         </TextWrapper>
         <MockupAnimations />
       </ContentWrapper>
