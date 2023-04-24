@@ -1,4 +1,5 @@
+import Header from './Header';
 import Layout from './layout';
 import Seo from './seo';
 
-export { Layout, Seo };
+export { Header, Layout, Seo };
