@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { heroWave1, heroWave2, heroWave3, heroWave3Dark } from '../../../static/images/waves';
+import { heroWave1, heroWave2, heroWave3, heroWave3Dark } from '../../assets/waves';
 
 export default function WaveBackground() {
   return (
@@ -34,7 +34,7 @@ const Wave = styled.img`
 
   :last-child {
     @media (prefers-color-scheme: dark) {
-      content: url('/static/images/waves/hero-wave3-dark.svg');
+      content: url('/src/assets/waves/hero-wave3-dark.svg');
     }
   }
 `;
