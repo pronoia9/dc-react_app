@@ -7,7 +7,16 @@ import { MenuTooltip } from '../tooltips';
 import { headerSection as data } from '../../utils/data';
 
 export default function Header() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMoreOpen, setisMoreOpen] = useState(false);
+  const [isSearchOpen, setisSearchOpen] = useState(false);
+  const [isAccountOpen, setIsAccountOpen] = useState(false);
+
+  const handleClick = (e, link) => {
+    if (link.includes('more') || link.includes('search') || link.includes('account')) e.preventDefault();
+    if (link.includes('more')) setisMoreOpen(!isMoreOpen);
+    if (link.includes('search')) setisSearchOpen(!isSearchOpen);
+    if (link.includes('account')) setIsAccountOpen(!isAccountOpen);
+  };
 
   return (
     <Wrapper>
@@ -17,14 +26,14 @@ export default function Header() {
       <MenuWrapper count={data?.navLinks?.length}>
         {data?.navLinks?.map((link, index) => (
           <MenuButton
-            key={`${index}-${link.title}`}
+            key={`${index}${link.title}`}
             {...link}
             index={index}
-            handleClick={() => link.icon.includes('account') && setIsOpen(!isOpen)}
+            handleClick={(e) => handleClick(e, link.icon)}
           />
         ))}
       </MenuWrapper>
-      <MenuTooltip data={data.tooltips.account} isOpen={isOpen} />
+      <MenuTooltip data={data.tooltips.account} isOpen={isAccountOpen} />
     </Wrapper>
   );
 }
