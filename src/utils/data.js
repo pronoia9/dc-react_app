@@ -17,3 +17,7 @@ export const heroSection = {
   subtitle:
     'Get access to 30 premium courses, tutorials and livestreams. Over 80 hours of content, source files and priority support.',
 };
+
+export const header = {
+  navLinks: [{ title: 'Courses' }, { title: 'Tutorials' }, { title: 'Livestreams' }],
+};
