@@ -11,8 +11,10 @@ export default function PurchaseButton({ icon, title, subtitle }) {
         <IconWrapper>
           <Icon src={icon} />
         </IconWrapper>
-        <Title>{title}</Title>
-        <Subtitle>{subtitle}</Subtitle>
+        <TextWrapper>
+          <Title>{title}</Title>
+          <Subtitle>{subtitle}</Subtitle>
+        </TextWrapper>
       </Wrapper>
     </Link>
   );
@@ -26,6 +28,10 @@ const Wrapper = styled.div`
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1), 0px 20px 40px rgba(23, 0, 102, 0.2),
     inset 0px 0px 0px 0.5px rgba(255, 255, 255, 0.5);
   border-radius: 20px;
+  display: grid;
+  grid-template-columns: 53px auto;
+  align-items: center;
+  gap: 20px;
 `;
 
 const IconWrapper = styled.div`
@@ -35,13 +41,18 @@ const IconWrapper = styled.div`
   box-shadow: 0px 10px 20px rgba(182, 153, 255, 0.3);
   border-radius: 50%;
   display: grid;
-  justify-content: center;
   align-content: center;
+  justify-content: center;
 `;
 
 const Icon = styled.img`
   width: 29px;
   height: 29px;
+`;
+
+const TextWrapper = styled.div`
+  display: grid;
+  gap: 4px;
 `;
 
 const Title = styled(Caption2)`
