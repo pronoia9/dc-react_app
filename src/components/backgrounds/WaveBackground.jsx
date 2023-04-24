@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { heroWave1, heroWave2, heroWave3, heroWave3Dark } from '../../assets/waves';
+import { heroWave1, heroWave2, heroWave3 } from '../../assets/waves';
 
 export default function WaveBackground() {
   return (
