@@ -5,15 +5,17 @@ import { MenuButton } from '../buttons';
 import { MenuTooltip } from '../tooltips';
 import { headerData as data } from '../../utils/data';
 
+const defaultTooltipState = { more: false, search: false, account: false };
+
 export default function HeaderSection() {
-  const [isOpen, setIsOpen] = useState({ more: false, search: false, account: false });
+  const [isOpen, setIsOpen] = useState(defaultTooltipState);
 
   useEffect(() => {}, []);
 
   const handleClick = (e, tooltip, title) => {
     if (tooltip) {
       e.preventDefault();
-      setIsOpen((isOpen) => ({ ...isOpen, [title]: !isOpen[title] }));
+      setIsOpen({ ...defaultTooltipState, [title]: !isOpen[title] });
     }
   };
 
