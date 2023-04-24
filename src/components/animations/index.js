@@ -1,3 +1,3 @@
-import MockupAnimation from './MockupAnimation';
+import MockupAnimations from './MockupAnimations';
 
-export { MockupAnimation };
+export { MockupAnimations };

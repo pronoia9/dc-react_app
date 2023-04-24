@@ -1,15 +1,4 @@
-import React from 'react';
+import NotFoundPage from './404';
+import Page2 from './Page2';
 
-import { Layout, Seo } from '../components/layout';
-import { HeroSection } from '../components/sections';
-
-function IndexPage() {
-  return (
-    <Layout>
-      <Seo title='Home' />
-      <HeroSection />
-    </Layout>
-  );
-}
-
-export default IndexPage;
+export { NotFoundPage, Page2 };
