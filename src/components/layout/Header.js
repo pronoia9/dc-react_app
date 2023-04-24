@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { header } from '../../utils/data';
+import { headerSection } from '../../utils/data';
 
 export default function Header() {
   return (
     <div>
-      {header.navLinks.map((link, index) => (
-        <p>{link}</p>
+      {headerSection.navLinks.map((link, index) => (
+        <p key={index}>{link.title}</p>
       ))}
     </div>
   );
