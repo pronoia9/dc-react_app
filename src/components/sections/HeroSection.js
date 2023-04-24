@@ -49,7 +49,7 @@ const TextWrapper = styled.div`
 `;
 
 const Title = styled(H1)`
-  color: ${themes.light.text1};
+  color: white;
 `;
 
 const Description = styled(MediumText)``;
