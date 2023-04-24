@@ -5,8 +5,8 @@ import styled from 'styled-components';
 export default function MenuButton({ title, icon, link, index, handleClick }) {
   return (
     <>
-      <Link to={link}>
-        <MenuItem title={title?.length} onClick={handleClick}>
+      <Link to={link} onClick={handleClick}>
+        <MenuItem title={title?.length}>
           <img src={icon} alt={title} />
           {title}
         </MenuItem>
