@@ -15,7 +15,8 @@ export default function HeroSection() {
         <TextWrapper>
           <Title>
             Design
-            <br /> and code <span>React</span> apps
+            <br /> and code
+            <br /> <span>React</span> apps
           </Title>
           <Description>{data.description}</Description>
           <PurchaseButton {...data.button.title} />
