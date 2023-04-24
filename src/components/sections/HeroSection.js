@@ -16,7 +16,7 @@ const HeroSection = () => {
           <Title>
             Design
             <br />
-            and code React apps
+            and code <span>React</span> apps
           </Title>
           <Description>{data.description}</Description>
           <PurchaseButton {...data.button} />
@@ -69,7 +69,19 @@ const TextWrapper = styled.div`
 `;
 
 const Title = styled(H1)`
-  color: white;
+  color: transparent;
+  background: linear-gradient(180deg, #730040 0%, #301cbe 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-blend-mode: overlay, normal;
+
+  span {
+    background: linear-gradient(180deg, #ffd7ff 0%, #ffb6ff 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 `;
 
 const Description = styled(MediumText)``;
