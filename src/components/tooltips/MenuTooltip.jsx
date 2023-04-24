@@ -6,7 +6,7 @@ export default function MenuTooltip({ isOpen, data }) {
   return (
     <Wrapper isOpen={isOpen}>
       {data.map((item, index) => (
-        <MenuButton item={item} key={index} />
+        <MenuButton key={`menubtn-${index}`} {...item} />
       ))}
     </Wrapper>
   );
