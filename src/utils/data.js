@@ -19,6 +19,7 @@ export const heroSection = {
 };
 
 export const headerSection = {
+  logo: '/images/logos/logo.svg',
   navLinks: [
     { title: 'Courses', icon: '/images/icons/courses.svg', link: '/courses' },
     { title: 'Tutorials', icon: '/images/icons/tutorials.svg', link: '/tutorials' },
