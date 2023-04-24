@@ -1,17 +1,17 @@
 import { PropTypes } from 'prop-types';
 import { Helmet } from 'react-helmet';
 
-export default function SEO() {
+export default function Seo() {
   return <div>Seo</div>;
 }
 
-SEO.defaultProps = {
+Seo.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
 };
 
-SEO.propTypes = {
+Seo.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
