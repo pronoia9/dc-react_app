@@ -3,18 +3,45 @@ import styled from 'styled-components';
 
 import { MenuButton } from '../buttons';
 import { MenuTooltip } from '../tooltips';
-import { headerData } from '../../utils/data';
+import { headerData as data } from '../../utils/data';
 
 export default function HeaderSection() {
   const [isOpen, setIsOpen] = useState({ more: false, search: false, account: false });
 
   useEffect(() => {}, []);
 
-  const handleClick = () => {};
+  const handleClick = (e, title) => {
+    if (title === 'more' || title === 'search' || title === 'account') {
+      console.log(title);
+      e.preventDefault();
+      setIsOpen((isOpen) => ({ ...isOpen, [title]: !isOpen[title] }));
+    }
+  };
 
   const handleClickOutside = () => {};
 
-  return <div></div>;
+  return (
+    <Wrapper>
+      <img src={data.logo} alt='logo' />
+      <MenuWrapper count={data.navLinks.length}>
+        {data.navLinks.map((item, index) => (
+          <div key={`nav-${index}`}>
+            <MenuButton {...item} handleClick={(e) => handleClick(e, item.title)} />
+            {item.tooltip && <MenuTooltip isOpen={isOpen[item.title]} data={data.tooltips[item.title]} />}
+            {/* item.link === '/account' ? (
+            <MenuButton item={item} key={index} onClick={(e) => handleClick(e)} />
+          ) : (
+            <MenuButton item={item} key={index} />
+          ) */}
+          </div>
+        ))}
+        <HamburgerWrapper>
+          <MenuButton item={data.hamburger} onClick={(e) => handleClick(e)} />
+        </HamburgerWrapper>
+      </MenuWrapper>
+      <div>{/* <MenuTooltip isOpen={isOpen} data={data.tooltips.account} /> */}</div>
+    </Wrapper>
+  );
 }
 
 const Wrapper = styled.div`
