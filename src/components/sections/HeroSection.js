@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { H1, MediumText } from '../styles/TextStyles';
+import { MockupAnimation } from '../animations/';
+import { PurchaseButton } from '../buttons';
 import { themes } from '../styles/ColorStyles';
+import { H1, MediumText } from '../styles/TextStyles';
 import { heroSection as data } from '../../utils/data';
-import PurchaseButton from '../buttons/PurchaseButton';
 
 const HeroSection = () => {
   return (
@@ -19,6 +20,7 @@ const HeroSection = () => {
           <Description>{data.description}</Description>
           <PurchaseButton {...data.button} />
         </TextWrapper>
+        <MockupAnimation />
       </ContentWrapper>
     </Wrapper>
   );
