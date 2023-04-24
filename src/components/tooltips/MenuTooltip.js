@@ -22,9 +22,14 @@ const Wrapper = styled.div`
   position: absolute;
   top: 60px;
   right: 30px;
-  opacity: ${(props) => (props.isOpen ? '1' : '0.5')};
+  opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
+  /* display: ${({ isOpen }) => (isOpen ? 'block' : 'none')}; */
+  visibility: ${({ isOpen }) => (isOpen ? 'visible' : 'hidden')};
   z-index: 1;
   display: grid;
   gap: 10px;
   grid-template-columns: 150px;
+  transition: 0.3s ease-in-out;
+  transform: ${({ isOpen }) =>
+    isOpen ? 'skewY(0deg) rotate(0deg) translateY(0px)' : 'skewY(-5deg) rotate(5deg) translateY(-30px)'};
 `;
