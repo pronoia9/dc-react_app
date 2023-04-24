@@ -29,4 +29,15 @@ export const headerSection = {
     { title: '', icon: '/images/icons/search.svg', link: '/' },
     { title: '', icon: '/images/icons/account.svg', link: '/' },
   ],
+  tooltip: [
+    { title: 'Profile', icon: '/images/icons/account.svg', link: '/' },
+    { title: 'Certificates', icon: '/images/icons/account.svg', link: '/' },
+    { title: 'Settings', icon: '/images/icons/account.svg', link: '/' },
+    { title: 'Billing', icon: '/images/icons/account.svg', link: '/' },
+    { title: 'Manage Team', icon: '/images/icons/account.svg', link: '/' },
+    { title: 'Discounts', icon: '/images/icons/account.svg', link: '/' },
+    { title: 'Gift Licenses', icon: '/images/icons/account.svg', link: '/' },
+    { title: 'Dark Mode', icon: '/images/icons/account.svg', link: '/' },
+    { title: 'Sign Out', icon: '/images/icons/account.svg', link: '/' },
+  ],
 };
